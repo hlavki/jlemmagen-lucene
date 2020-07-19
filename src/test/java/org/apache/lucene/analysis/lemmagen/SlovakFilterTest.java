@@ -25,7 +25,6 @@ import org.apache.lucene.analysis.BaseTokenStreamTestCase;
 import org.apache.lucene.analysis.TokenStream;
 import org.apache.lucene.analysis.core.LowerCaseFilter;
 import org.apache.lucene.analysis.miscellaneous.ASCIIFoldingFilter;
-import org.apache.lucene.analysis.standard.StandardFilter;
 import org.apache.lucene.analysis.standard.StandardTokenizer;
 import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;
 import org.junit.Test;
@@ -55,7 +54,7 @@ public class SlovakFilterTest extends BaseTokenStreamTestCase {
                 StandardTokenizer source = new StandardTokenizer();
 
                 TokenStream filter = new ASCIIFoldingFilter(new LemmagenFilter(
-                    new LowerCaseFilter(new StandardFilter(source)), "mlteast-sk"));
+                    new LowerCaseFilter(source), "mlteast-sk"));
                 return new Analyzer.TokenStreamComponents(source, filter);
             }
         };

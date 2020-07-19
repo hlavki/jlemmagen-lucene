@@ -22,7 +22,6 @@ import org.apache.lucene.analysis.TokenFilter;
 import org.apache.lucene.analysis.TokenStream;
 import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;
 import org.apache.lucene.analysis.CharacterUtils;
-import org.slf4j.LoggerFactory;
 
 /**
  *
@@ -30,10 +29,8 @@ import org.slf4j.LoggerFactory;
  */
 public class LemmagenFilter extends TokenFilter {
 
-    private static final org.slf4j.Logger log = LoggerFactory.getLogger(LemmagenFilter.class);
     private final CharTermAttribute termAtt = addAttribute(CharTermAttribute.class);
     private Lemmatizer lm = null;
-
 
     public LemmagenFilter(final TokenStream input, final String lexiconResource) {
         super(input);
@@ -43,7 +40,6 @@ public class LemmagenFilter extends TokenFilter {
             throw new IllegalArgumentException("Can't initialize lemmatizer from resource " + lexiconResource, e);
         }
     }
-
 
     @Override
     public final boolean incrementToken() throws IOException {
@@ -57,7 +53,6 @@ public class LemmagenFilter extends TokenFilter {
         }
         return true;
     }
-
 
     /**
      * Compare two char sequences for equality. Assumes non-null arguments.
