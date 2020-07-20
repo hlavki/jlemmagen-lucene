@@ -6,6 +6,10 @@
     <artifactId>jlemmagen-lucene</artifactId>
     <version>8.6.0_1-SNAPSHOT</version>
 
+    <name>JLemmaGen Lucene</name>
+    <description>JLemmaGen Lucene is basic lucene filter to support JLemmaGen lemmatizer.</description>
+    <url>https://github.com/hlavki/jlemmagen-lucene</url>
+
     <scm>
         <connection>scm:git:git@github.com:hlavki/jlemmagen-lucene.git</connection>
         <url>https://github.com/hlavki/jlemmagen-lucene</url>
@@ -14,8 +18,9 @@
 
     <licenses>
         <license>
-            <name>Apache License 2.0</name>
-            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
         </license>
     </licenses>
 
@@ -54,7 +59,7 @@
         <dependency>
             <groupId>eu.hlavki.text</groupId>
             <artifactId>jlemmagen</artifactId>
-            <version>1.0.1-SNAPSHOT</version>
+            <version>1.0</version>
         </dependency>
         <dependency>
             <groupId>org.apache.lucene</groupId>
@@ -100,7 +105,7 @@
                 <artifactId>maven-release-plugin</artifactId>
                 <version>2.5.3</version>
                 <configuration>
-                    <tagNameFormat>v@{project.version}</tagNameFormat>
+                    <tagNameFormat>r@{project.version}</tagNameFormat>
                     <pushChanges>false</pushChanges>
                     <localCheckout>true</localCheckout>
                 </configuration>
